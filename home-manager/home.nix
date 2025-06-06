@@ -1,10 +1,7 @@
 {
   pkgs,
-  lib,
   username,
   stateVersion,
-  inputs,
-  system,
   ...
 }:
 
@@ -42,8 +39,8 @@
         )
       ]
       ++ [
-        inputs.fym998-nur.packages.${system}.wpsoffice-cn-fcitx
-        inputs.fym998-nur.packages.${system}.hmcl-multi-jdk
+        pkgs.fym998.wpsoffice-cn-fcitx
+        pkgs.fym998.hmcl-multi-jdk
       ];
   };
 

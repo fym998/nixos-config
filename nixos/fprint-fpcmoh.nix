@@ -1,10 +1,10 @@
-{ inputs, system, ... }:
+{ pkgs, ... }:
 {
   services.fprintd = {
     enable = true;
-    package = inputs.fym998-nur.packages.${system}.fprintd-fpcmoh;
+    package = pkgs.fym998.fprintd-fpcmoh;
   };
-  services.udev.packages = [ inputs.fym998-nur.packages.${system}.libfprint-fpcmoh ];
+  services.udev.packages = [ pkgs.fym998.libfprint-fpcmoh ];
 
   # to unlock kde wallet
   security.pam.services.login.fprintAuth = false;
