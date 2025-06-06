@@ -102,7 +102,7 @@
       extraArgs = "--keep-since 1w --keep 10";
       dates = "weekly";
     };
-    flake = "/home/${username}/repos/nixos-config/flake.nix";
+    flake = "/home/${username}/repos/nixos-config";
   };
 
   services.displayManager = {
