@@ -85,14 +85,17 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1749207817,
-        "narHash": "sha256-/1O9wj6YqABJsINqDJNe8b1w9M3j1OqFKfS6noHM2os=",
-        "path": "/home/fym/repos/nur-packages",
-        "type": "path"
+        "lastModified": 1749207801,
+        "narHash": "sha256-ZmTLlnNGH67A5aqfg4x4bKq2cHsTYYxk3/tvDxp7NF8=",
+        "owner": "fym998",
+        "repo": "nur-packages",
+        "rev": "62ad6dc97c3dbf9f54a1edbb858685a797c28542",
+        "type": "github"
       },
       "original": {
-        "path": "/home/fym/repos/nur-packages",
-        "type": "path"
+        "owner": "fym998",
+        "repo": "nur-packages",
+        "type": "github"
       }
     },
     "gitignore": {

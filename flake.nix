@@ -26,7 +26,7 @@
     impermanence.url = "https://flakehub.com/f/nix-community/impermanence/*";
 
     fym998-nur = {
-      url = "/home/fym/repos/nur-packages";
+      url = "github:fym998/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
