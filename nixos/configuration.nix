@@ -75,15 +75,15 @@
     interval = "weekly";
   };
 
-  services.snapper = {
-    persistentTimer = true;
-    configs.nixos-config = {
-      SUBVOLUME = "/etc/nixos";
-      ALLOW_USERS = [ username ];
-      TIMELINE_CREATE = true;
-      TIMELINE_CLEANUP = true;
-    };
-  };
+  # services.snapper = {
+  #   persistentTimer = true;
+  #   configs.nixos-config = {
+  #     SUBVOLUME = "/etc/nixos";
+  #     ALLOW_USERS = [ username ];
+  #     TIMELINE_CREATE = true;
+  #     TIMELINE_CLEANUP = true;
+  #   };
+  # };
 
   services.openssh = {
     enable = true;
