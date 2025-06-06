@@ -42,14 +42,7 @@
         )
       ]
       ++ [
-        (
-          let
-            wps = inputs.fym998-nur.packages.${system}.wpsoffice-cn-fcitx.overrideAttrs {
-              meta.license = lib.licenses.mit;
-            };
-          in
-          wps
-        )
+        inputs.fym998-nur.packages.${system}.wpsoffice-cn-fcitx
         inputs.fym998-nur.packages.${system}.hmcl-multi-jdk
       ];
   };
