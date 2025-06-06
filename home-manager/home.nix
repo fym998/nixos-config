@@ -26,9 +26,6 @@
         nixfmt-rfc-style
         kdePackages.yakuake
         kdePackages.kdialog
-        (hmcl.override {
-          jre = pkgs.jdk17;
-        })
         intel-gpu-tools
         umu-launcher
         vulkan-tools
@@ -47,12 +44,13 @@
       ++ [
         (
           let
-            wps = inputs.fym998-nur.packages.${system}.wpsoffice-cn-custom.overrideAttrs {
+            wps = inputs.fym998-nur.packages.${system}.wpsoffice-cn-fcitx.overrideAttrs {
               meta.license = lib.licenses.mit;
             };
           in
           wps
         )
+        inputs.fym998-nur.packages.${system}.hmcl-multi-jdk
       ];
   };
 
