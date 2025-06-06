@@ -95,16 +95,16 @@
       ];
     };
 
-    "/etc/nixos" = {
-      device = "/dev/disk/by-uuid/b380834f-9707-4ad0-a703-778a115bb0a0";
-      fsType = "btrfs";
-      options = [
-        "lazytime"
-        "noatime"
-        "compress=zstd"
-        "subvol=@nixos-config"
-      ];
-    };
+    # "/etc/nixos" = {
+    #   device = "/dev/disk/by-uuid/b380834f-9707-4ad0-a703-778a115bb0a0";
+    #   fsType = "btrfs";
+    #   options = [
+    #     "lazytime"
+    #     "noatime"
+    #     "compress=zstd"
+    #     "subvol=@nixos-config"
+    #   ];
+    # };
 
     "/boot" = {
       device = "/dev/disk/by-uuid/EAF5-A902";
