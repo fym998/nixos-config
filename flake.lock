@@ -85,8 +85,8 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1749212843,
-        "narHash": "sha256-QMIW7+tK28SCMKsP8oh2f4RHb+PCoCXkODPoKWlAHM4=",
+        "lastModified": 1749228684,
+        "narHash": "sha256-0/s2N/5EkuJKRbNNZtE6zrjzpfliCm/BMaK92GewatU=",
         "path": "/home/fym/repos/nur-packages",
         "type": "path"
       },
