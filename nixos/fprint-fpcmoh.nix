@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, system, ... }:
 {
   services.fprintd = {
     enable = true;
