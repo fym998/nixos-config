@@ -97,7 +97,7 @@
       nightLight = {
         enable = true;
         mode = "location";
-        #temperature.night = 5800;
+        temperature.night = 5800;
         location = {
           latitude = "39.5";
           longitude = "116.1";
