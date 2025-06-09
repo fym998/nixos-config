@@ -18,9 +18,6 @@ in
 {
   "mihomo-config.age".publicKeys = all;
   "password-root.age".publicKeys = [ root_on_legion-nixos ] ++ systems;
-  "password-fym.age".publicKeys = [
-    fym_on_legion-nixos
-    root_on_legion-nixos
-  ] ++ systems;
+  "password-fym.age".publicKeys = [ root_on_legion-nixos ] ++ systems;
   "matrix-recovery-key.age".publicKeys = all;
 }
