@@ -72,11 +72,18 @@
         ${hostname} = nixpkgs.lib.nixosSystem {
           inherit specialArgs system;
 
-          modules = with inputs; [
+          modules = [
+            ({
+              nixpkgs.overlays = [
+                (prev: {
+                  fym998 = inputs.fym998-nur.packages."${prev.system}";
+                })
+              ];
+            })
             ./nixos
-            agenix.nixosModules.default
-            #impermanence.nixosModules.impermanence
-            home-manager.nixosModules.home-manager
+            inputs.agenix.nixosModules.default
+            #inputs.impermanence.nixosModules.impermanence
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
