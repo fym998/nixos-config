@@ -10,6 +10,14 @@
     inherit username;
     homeDirectory = "/home/${username}";
 
+    sessionVariables =
+      let
+        env = {
+          NIXOS_OZONE_WL = "1";
+        };
+      in
+      env;
+
     packages =
       with pkgs;
       [
@@ -27,7 +35,10 @@
         umu-launcher
         vulkan-tools
         glxinfo
-        ffmpeg
+        # ffmpeg
+        # element-desktop
+        alacritty
+        fuzzel
 
         winetricks
         wineWow64Packages.stagingFull
