@@ -36,6 +36,8 @@
       nvidiaBusId = "PCI:1:0:0";
       #amdgpuBusId = "PCI:54:0:0"; # If you have an AMD iGPU
     };
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
   };
 
   imports = [
