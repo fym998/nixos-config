@@ -75,7 +75,7 @@
           modules = [
             ({
               nixpkgs.overlays = [
-                (prev: {
+                (_: prev: {
                   fym998 = inputs.fym998-nur.packages."${prev.system}";
                 })
               ];
