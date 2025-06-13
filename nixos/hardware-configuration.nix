@@ -54,8 +54,11 @@
     "sdhci_pci"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "legion-laptop"
+  ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
 
   fileSystems = {
     "/" = {
