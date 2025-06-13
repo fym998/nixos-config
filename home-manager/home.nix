@@ -13,7 +13,7 @@
     sessionVariables =
       let
         env = {
-          NIXOS_OZONE_WL = "1";
+          NIXOS_OZONE_WL = 1;
         };
       in
       env;
@@ -25,7 +25,6 @@
         nil
         nix-tree
         btrfs-assistant
-        nix-init
         go-musicfox
         alejandra
         nixfmt-rfc-style
@@ -35,10 +34,14 @@
         umu-launcher
         vulkan-tools
         glxinfo
-        # ffmpeg
-        # element-desktop
+        ffmpeg
+        element-desktop
         alacritty
         fuzzel
+        obsidian
+
+        nix-init
+        nix-prefetch-git
 
         winetricks
         wineWow64Packages.stagingFull
