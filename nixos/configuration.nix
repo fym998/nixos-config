@@ -114,7 +114,7 @@
   services.desktopManager.plasma6.enable = true;
   programs.niri.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
