@@ -1,5 +1,8 @@
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+  };
 
   nix.settings = {
     substituters = [
