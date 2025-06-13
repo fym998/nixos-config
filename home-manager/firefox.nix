@@ -25,7 +25,7 @@
           baidu.metaData.hidden = true;
 
           nixos-packages = {
-            name = "NixOS Packages";
+            name = "NixOS Packages np";
             urls = [
               {
                 template = "https://search.nixos.org/packages";
