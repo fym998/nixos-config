@@ -81,6 +81,10 @@
       fetch.fsckobjects = true;
       receive.fsckobjects = true;
     };
+    signing = {
+      key = "0xD7BC265823B30CC1";
+      signByDefault = true;
+    };
   };
 
   programs.gpg.enable = true;
