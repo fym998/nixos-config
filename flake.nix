@@ -29,6 +29,7 @@
       url = "path:/home/fym/repos/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.pre-commit-hooks.follows = "pre-commit-hooks";
+      inputs.treefmt-nix.follows = "treefmt-nix";
     };
 
     pre-commit-hooks = {
