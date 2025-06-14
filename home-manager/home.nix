@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   username,
   stateVersion,
@@ -60,7 +61,8 @@
   };
 
   services.podman.enable = true;
-  xdg.configFile."containers/registries.conf".source = ./files/.config/containers/registries.conf;
+  xdg.configFile."containers/registries.conf".source =
+    lib.mkForce ./files/.config/containers/registries.conf;
 
   fonts.fontconfig.enable = true;
   xdg.configFile = {
