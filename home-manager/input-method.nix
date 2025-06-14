@@ -16,6 +16,6 @@
     };
   };
   xdg.configFile = {
-    "fcitx5".source = ./files/config/fcitx5;
+    "fcitx5".source = ./files/.config/fcitx5;
   };
 }
