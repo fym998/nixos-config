@@ -73,7 +73,13 @@
   programs.git = {
     enable = true;
     userName = "fym998";
-    userEmail = "fujun998@outlook.com";
+    userEmail = "61316972+fym998@users.noreply.github.com";
+    extraConfig = {
+      # https://forums.whonix.org/t/git-users-enable-fsck-by-default-for-better-security/2066
+      transfer.fsckobjects = true;
+      fetch.fsckobjects = true;
+      receive.fsckobjects = true;
+    };
   };
 
   programs.lutris = {
