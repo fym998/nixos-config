@@ -24,17 +24,17 @@
         gh
         nil
         nix-tree
-        btrfs-assistant
-        go-musicfox
-        alejandra
         nixfmt-rfc-style
+
+        go-musicfox
+        ffmpeg
+        kazumi
+
         kdePackages.yakuake
         kdePackages.kdialog
         intel-gpu-tools
-        umu-launcher
         vulkan-tools
         glxinfo
-        ffmpeg
         element-desktop
         alacritty
         fuzzel
@@ -43,6 +43,7 @@
         nix-init
         nix-prefetch-git
 
+        umu-launcher
         winetricks
         wineWow64Packages.stagingFull
         (
