@@ -64,6 +64,16 @@
       # fh.packages.x86_64-linux.default
     ]);
 
+  programs.gnupg = {
+    agent = {
+      enable = true;
+      enableBrowserSocket = true;
+      enableExtraSocket = true;
+      enableSSHSupport = true;
+    };
+    dirmngr.enable = true;
+  };
+
   programs.fish.enable = true;
   programs.git.enable = true;
 
