@@ -65,9 +65,7 @@
     lib.mkForce ./files/.config/containers/registries.conf;
 
   fonts.fontconfig.enable = true;
-  xdg.configFile = {
-    "fontconfig/fonts.conf".source = ./files/.config/fontconfig/fonts.conf;
-  };
+  xdg.configFile."fontconfig/fonts.conf".source = ./files/.config/fontconfig/fonts.conf;
 
   programs.direnv = {
     enable = true;
