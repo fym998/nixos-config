@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, ... }:
 {
   programs.plasma = {
     enable = true;
@@ -105,24 +105,17 @@
       };
     };
 
-    fonts =
-      let
-        fontFamily = "Source Han Sans SC";
-      in
-      {
-        general.family = fontFamily;
-        general.pointSize = 10;
-        menu.family = fontFamily;
-        menu.pointSize = 10;
-        small.family = fontFamily;
-        small.pointSize = 8;
-        toolbar.family = fontFamily;
-        toolbar.pointSize = 10;
-        windowTitle.family = fontFamily;
-        windowTitle.pointSize = 10;
-        # fixedWidth.family = "Hack";
-        # fixedWidth.pointSize = 11;
-      };
+    fonts = rec {
+      general.family = builtins.head osConfig.fonts.fontconfig.defaultFonts.sansSerif;
+      general.pointSize = 10;
+      small.family = builtins.head osConfig.fonts.fontconfig.defaultFonts.sansSerif;
+      small.pointSize = 8;
+      fixedWidth.family = builtins.head osConfig.fonts.fontconfig.defaultFonts.monospace;
+      fixedWidth.pointSize = 11;
+      menu = general;
+      toolbar = general;
+      windowTitle = general;
+    };
   };
 
   programs.plasma.kscreenlocker = {
