@@ -51,6 +51,8 @@
       btop
 
       gparted
+      btrfs-assistant
+
       lenovo-legion
 
       arch-install-scripts
