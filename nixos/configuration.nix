@@ -48,6 +48,10 @@
       pciutils
       usbutils
       htop
+      btop
+
+      gparted
+      lenovo-legion
 
       arch-install-scripts
     ]
