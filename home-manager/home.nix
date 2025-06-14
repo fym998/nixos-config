@@ -83,6 +83,8 @@
     };
   };
 
+  programs.gpg.enable = true;
+
   programs.lutris = {
     enable = true;
     extraPackages = with pkgs; [
