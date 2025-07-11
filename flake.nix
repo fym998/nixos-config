@@ -62,6 +62,11 @@
 
       pkgs = import nixpkgs {
         inherit system;
+        overlays = [ inputs.fym998-nur.overlays.default ];
+        config = {
+          allowUnfree = true;
+          cudaSupport = true;
+        };
       };
 
       treefmtEval.${system} = inputs.treefmt-nix.lib.evalModule pkgs {
@@ -76,6 +81,7 @@
           inherit specialArgs system;
 
           modules = [
+            { nixpkgs.pkgs = pkgs; }
             ./nixos
             inputs.agenix.nixosModules.default
             #inputs.impermanence.nixosModules.impermanence

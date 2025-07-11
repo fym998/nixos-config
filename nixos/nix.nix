@@ -1,13 +1,4 @@
-{ inputs, ... }:
 {
-  nixpkgs = {
-    overlays = [ inputs.fym998-nur.overlays.default ];
-    config = {
-      allowUnfree = true;
-      cudaSupport = true;
-    };
-  };
-
   nix.settings = rec {
     cores = 13;
     allow-import-from-derivation = false;
