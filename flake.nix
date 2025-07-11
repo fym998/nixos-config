@@ -14,7 +14,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-darwin = {
-      url = "https://flakehub.com/f/nix-darwin/nix-darwin/*";
+      url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix = {
@@ -23,7 +23,7 @@
       inputs.home-manager.follows = "home-manager";
       inputs.darwin.follows = "nix-darwin";
     };
-    impermanence.url = "https://flakehub.com/f/nix-community/impermanence/*";
+    impermanence.url = "github:nix-community/impermanence";
 
     nixos-hardware.url = "github:Biaogo/nixos-hardware/master";
 
