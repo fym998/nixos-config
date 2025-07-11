@@ -14,7 +14,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-darwin = {
-      url = "https://flakehub.com/f/nix-darwin/nix-darwin/0.2505.*";
+      url = "https://flakehub.com/f/nix-darwin/nix-darwin/*";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix = {
@@ -25,11 +25,11 @@
     };
     impermanence.url = "https://flakehub.com/f/nix-community/impermanence/*";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     fym998-nur = {
       url = "path:/home/fym/repos/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.pre-commit-hooks.follows = "pre-commit-hooks";
-      inputs.treefmt-nix.follows = "treefmt-nix";
     };
 
     pre-commit-hooks = {
@@ -65,7 +65,6 @@
       treefmtEval.${system} = inputs.treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
         programs.nixfmt.enable = true;
-        programs.deadnix.enable = true;
       };
     in
     {
@@ -75,13 +74,13 @@
           inherit specialArgs system;
 
           modules = [
-            ({
+            {
               nixpkgs.overlays = [
                 (_: prev: {
                   fym998 = inputs.fym998-nur.packages."${prev.system}";
                 })
               ];
-            })
+            }
             ./nixos
             inputs.agenix.nixosModules.default
             #inputs.impermanence.nixosModules.impermanence
@@ -92,10 +91,14 @@
                 useUserPackages = true;
                 users.${username} = ./home-manager;
                 extraSpecialArgs = specialArgs;
-                sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+                sharedModules = [
+                  inputs.plasma-manager.homeManagerModules.plasma-manager
+                  inputs.agenix.homeManagerModules.default
+                ];
                 backupFileExtension = "backup";
               };
             }
+            inputs.nixos-hardware.nixosModules.lenovo-legion-16iah7h
           ];
         };
       };
@@ -103,11 +106,11 @@
       formatter.${system} = treefmtEval.${system}.config.build.wrapper;
 
       checks.${system} = {
-        pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+        pre-commit = inputs.pre-commit-hooks.lib.${system}.run {
           src = ./.;
-          hooks = {
-            nixfmt-rfc-style.enable = true;
-            deadnix.enable = true;
+          hooks.treefmt = {
+            enable = true;
+            packageOverrides.treefmt = treefmtEval.${system}.config.build.wrapper;
           };
         };
         # formatting = treefmtEval.${pkgs.system}.config.build.check self;
@@ -115,8 +118,8 @@
 
       devShells.${system} = {
         default = pkgs.mkShellNoCC {
-          inherit (self.checks.${system}.pre-commit-check) shellHook;
-          buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+          inherit (self.checks.${system}.pre-commit) shellHook;
+          buildInputs = self.checks.${system}.pre-commit.enabledPackages;
           packages = with pkgs; [
             nil
             # nixd

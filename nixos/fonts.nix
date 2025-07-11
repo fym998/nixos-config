@@ -9,8 +9,6 @@
   fonts.packages = with pkgs; [
     source-han-sans # -vf-otf
     source-han-serif # -vf-otf
-    #noto-fonts-color-emoji
-    noto-fonts-monochrome-emoji
     nerd-fonts.hack
     #vista-fonts-chs
 

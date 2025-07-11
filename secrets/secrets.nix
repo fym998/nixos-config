@@ -21,4 +21,5 @@ in
   "password-fym.age".publicKeys = [ root_on_legion-nixos ] ++ systems;
   "matrix-recovery-key.age".publicKeys = all;
   "steam-recovery-key.age".publicKeys = all;
+  "bitsrun-rs-config.age".publicKeys = all;
 }

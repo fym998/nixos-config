@@ -4,5 +4,6 @@
     ./firefox.nix
     ./input-method.nix
     ./plasma.nix
+    ./secrets.nix
   ];
 }

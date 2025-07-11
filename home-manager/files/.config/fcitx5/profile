@@ -27,3 +27,16 @@ Layout=
 [GroupOrder]
 0=Default
 
+[Groups/1]
+# Group Name
+Name=Gaming
+# Layout
+Default Layout=us
+# Default Input Method
+DefaultIM=pinyin
+
+[Groups/1/Items/0]
+# Name
+Name=keyboard-us
+# Layout
+Layout=

@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   username,
@@ -33,30 +34,39 @@
 
         kdePackages.yakuake
         kdePackages.kdialog
+
         intel-gpu-tools
         vulkan-tools
         glxinfo
-        element-desktop
+
         alacritty
         fuzzel
+        waybar
+
         obsidian
+        zotero
 
         nix-init
         nix-prefetch-git
 
+        (hmcl.override { glfw = glfw3-minecraft; })
         umu-launcher
         winetricks
-        wineWow64Packages.stagingFull
-        (
-          let
-            qw = q4wine.override { wine = wineWow64Packages.stagingFull; };
-          in
-          qw
-        )
+        # wineWow64Packages.stagingFull
       ]
+      ++ (with pkgs.fym998; [ wpsoffice-cn-fcitx ])
       ++ [
-        pkgs.fym998.wpsoffice-cn-fcitx
-        pkgs.fym998.hmcl-multi-jdk
+        (writeShellApplication {
+          name = "bsl";
+
+          runtimeInputs = [ pkgs.fym998.bitsrun-rs ];
+
+          text = ''
+            bitsrun login --config "${config.age.secrets.bitsrun-rs-config.path}"
+            sleep 1
+            bitsrun status
+          '';
+        })
       ];
   };
 
@@ -92,19 +102,19 @@
 
   programs.gpg.enable = true;
 
-  programs.lutris = {
-    enable = true;
-    extraPackages = with pkgs; [
-      mangohud
-      winetricks
-      gamescope
-      gamemode
-      umu-launcher
-      wineWow64Packages.stagingFull
-    ];
-    protonPackages = [ pkgs.proton-ge-bin ];
-    steamPackage = pkgs.steam;
-  };
+  # programs.lutris = {
+  #   enable = true;
+  #   extraPackages = with pkgs; [
+  #     mangohud
+  #     winetricks
+  #     gamescope
+  #     gamemode
+  #     umu-launcher
+  #     wineWow64Packages.stagingFull
+  #   ];
+  #   protonPackages = [ pkgs.proton-ge-bin ];
+  #   steamPackage = pkgs.steam;
+  # };
 
   xdg.enable = true;
   xdg.userDirs.enable = true;

@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   # home.activation.firefox = #lib.hm.dag.entryAfter ["writeBoundary"] ''
   # ''
@@ -68,15 +65,29 @@
 
           nixos-wiki = {
             name = "NixOS Wiki nw";
-            urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
-            # iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+            urls = [
+              {
+                template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+              }
+            ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@nw" ];
           };
 
+          noogle = {
+            name = "Noogle";
+            urls = [ { template = "https://noogle.dev/q?term={searchTerms}"; } ];
+            icon = "https://raw.githubusercontent.com/nix-community/noogle/d9f579cf4400610af7245b1d736a14e3179bcacc/website/public/white.svg";
+            definedAliases = [ "@noogle" ];
+          };
+
           archlinuxcn-wiki = {
             name = "Arch Linux CN Wiki";
-            urls = [ { template = "https://wiki.archlinuxcn.org/wzh/index.php?search={searchTerms}"; } ];
+            urls = [
+              {
+                template = "https://wiki.archlinuxcn.org/wzh/index.php?search={searchTerms}";
+              }
+            ];
             icon = "https://wiki.archlinuxcn.org/wzh/images/logo.svg";
             definedAliases = [ "@aw" ];
           };
@@ -84,6 +95,7 @@
       };
 
       settings = {
+        "browser.sessionstore.interval" = 120000;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
     };

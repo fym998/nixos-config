@@ -4,9 +4,16 @@
     cudaSupport = true;
   };
 
-  nix.settings = {
+  nix.settings = rec {
+    cores = 13;
+    allow-flake-config = true;
+    allow-import-from-derivation = false;
+    allowed-users = [ "@wheel" ];
+    trusted-users = allowed-users;
     substituters = [
-      "https://mirrors.cernet.edu.cn/nix-channels/store"
+      # "https://mirrors.cernet.edu.cn/nix-channels/store"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
       "https://fym998-nur.cachix.org"
       "https://pre-commit-hooks.cachix.org"

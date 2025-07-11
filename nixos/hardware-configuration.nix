@@ -14,6 +14,11 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  hardware.intelgpu = {
+    driver = "xe";
+    vaapiDriver = "intel-media-driver";
+  };
+
   hardware.graphics.extraPackages = with pkgs; [
     intel-media-driver
     vpl-gpu-rt
@@ -32,17 +37,15 @@
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
+      # intelBusId = "PCI:0:2:0";
+      # nvidiaBusId = "PCI:1:0:0";
       #amdgpuBusId = "PCI:54:0:0"; # If you have an AMD iGPU
     };
     powerManagement.enable = true;
     powerManagement.finegrained = true;
   };
 
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -148,7 +151,7 @@
     };
 
     "/archlinux/nix" = {
-      device = "/dev/disk/by-uuid/de0720b6-fffa-4dfc-8f16-d7df8fd7ec20";
+      device = "/dev/disk/by-uuid/b380834f-9707-4ad0-a703-778a115bb0a0";
       fsType = "btrfs";
       options = [
         "lazytime"

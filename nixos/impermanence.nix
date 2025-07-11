@@ -1,13 +1,13 @@
 { username, ... }:
 {
-  environment.persistence."/top/@" = {
+  environment.persistence."/top/@persistent" = {
     hideMounts = true;
     directories = [ ];
     files = [ ];
     users.${username} = {
       directories = [ ];
       files = [
-        ".config/kwinoutputconfig.json"
+
       ];
     };
   };

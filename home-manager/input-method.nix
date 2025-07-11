@@ -5,7 +5,7 @@
     type = "fcitx5";
     fcitx5 = {
       waylandFrontend = true;
-      fcitx5-with-addons = pkgs.kdePackages.fcitx5-with-addons;
+      inherit (pkgs.kdePackages) fcitx5-with-addons;
       addons = with pkgs; [
         kdePackages.fcitx5-chinese-addons
         fcitx5-mozc

@@ -55,6 +55,7 @@
           shellExpand = true;
         };
         #"Xwayland"."Scale"=1.5;
+        "Windows"."ElectricBorderCornerRatio" = 0.1;
       };
 
       "kdeglobals" = {
@@ -81,29 +82,31 @@
       "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
 
       "spectaclerc" = {
+        "Annotations"."annotationToolType" = 2;
+        "Annotations"."freehandShadow" = false;
+        "Annotations"."freehandStrokeColor" = "255,255,255";
         "General"."clipboardGroup" = "PostScreenshotCopyImage";
         "General"."printKeyRunningAction" = "StartNewInstance";
         "GuiConfig"."captureMode" = 4;
+        "GuiConfig"."includePointer" = true;
         "ImageSave"."imageCompressionQuality" = 100;
         "ImageSave"."imageFilenameTemplate" = "screenshot_<yyyy><MM><dd>_<HH><mm><ss>_<title>";
-        "ImageSave"."imageSaveLocation" = "file:///home/fym/Pictures/Screenshots/";
-        "ImageSave"."lastImageSaveLocation" = "file:///home/fym/图片/屏幕截图/屏幕截图_20250527_201733.png";
-        "ImageSave"."translatedScreenshotsFolder" = "屏幕截图";
-        "VideoSave"."translatedScreencastsFolder" = "屏幕录像";
+        "ImageSave"."translatedScreenshotsFolder" = "Screenshots";
+        "VideoSave"."imageFilenameTemplate" = "screenrecording_<yyyy><MM><dd>_<HH><mm><ss>_<title>";
+        "VideoSave"."translatedScreencastsFolder" = "ScreenRecordings";
       };
     };
 
-    kwin = {
-      nightLight = {
-        enable = true;
-        mode = "location";
-        temperature.night = 5800;
-        location = {
-          latitude = "39.5";
-          longitude = "116.1";
-        };
-      };
-    };
+    # kwin = {
+    #   nightLight = {
+    #     enable = true;
+    #     mode = "location";
+    #     location = {
+    #       latitude = "39.5";
+    #       longitude = "116.1";
+    #     };
+    #   };
+    # };
 
     fonts = rec {
       general.family = builtins.head osConfig.fonts.fontconfig.defaultFonts.sansSerif;
@@ -127,7 +130,7 @@
     enable = true;
     defaultProfile = "fish";
     profiles.fish = {
-      command = "${pkgs.fish}/bin/fish";
+      command = "fish";
       extraConfig."Interaction Options" = {
         OpenLinksByDirectClickEnabled = false;
         TextEditorCmd = 0;

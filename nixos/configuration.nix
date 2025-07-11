@@ -24,8 +24,6 @@
   # xdg.portal.config.common.default = "kde";
   xdg.portal.xdgOpenUsePortal = true;
 
-  networking.hostName = hostname;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages =
@@ -52,6 +50,7 @@
 
       gparted
       btrfs-assistant
+      compsize
 
       lenovo-legion
 
@@ -83,6 +82,9 @@
     enable = true;
     extraCompatPackages = with pkgs; [
       proton-ge-bin
+      mangohud
+      gamescope
+      gamemode
     ];
   };
 
@@ -104,7 +106,6 @@
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
-    settings.X11Forwarding = true;
   };
 
   services.tailscale.enable = true;
@@ -128,48 +129,14 @@
     defaultSession = "plasma";
   };
   services.desktopManager.plasma6.enable = true;
+  environment.plasma6.excludePackages = [
+    pkgs.kdePackages.elisa
+    pkgs.kdePackages.okular
+  ];
   programs.niri.enable = true;
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 15;
-
-      edk2-uefi-shell.enable = true;
-
-      extraEntries = {
-        "grub-HD0b.conf" = ''
-          title    GRUB
-          efi      /efi/edk2-uefi-shell/shell.efi
-          options  -nointerrupt -nomap -noversion -exit HD0b:\EFI\GRUB\grubx64.efi
-          sort-key ${config.boot.loader.systemd-boot.edk2-uefi-shell.sortKey}
-        '';
-        "archlinux-HD0b.conf" = ''
-          title    Arch Linux
-          efi      /efi/edk2-uefi-shell/shell.efi
-          options  -nointerrupt -nomap -noversion -exit HD0b:\vmlinuz-linux root=UUID=de0720b6-fffa-4dfc-8f16-d7df8fd7ec20 rw rootflags=subvol=@  loglevel=4 initrd=\intel-ucode.img initrd=\initramfs-linux.img
-          sort-key a
-        '';
-      };
-    };
-  };
-
-  # networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
-
-  # Configure network proxy if necessary
-  networking.proxy.default = "http://127.0.0.1:19870/";
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
