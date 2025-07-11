@@ -73,14 +73,17 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1752266023,
-        "narHash": "sha256-UioYj3tFMpCB0X2opxl1D9HlooKH1cSxsFA/VCmCpx0=",
-        "path": "/home/fym/repos/nur-packages",
-        "type": "path"
+        "lastModified": 1752266018,
+        "narHash": "sha256-istsXweEVM/WBbA6SeTUP0lduPFKAZZE+VKnXrAEYno=",
+        "owner": "fym998",
+        "repo": "nur-packages",
+        "rev": "a906fc2c7e80729d57342c73ac1ff47b9e778dc0",
+        "type": "github"
       },
       "original": {
-        "path": "/home/fym/repos/nur-packages",
-        "type": "path"
+        "owner": "fym998",
+        "repo": "nur-packages",
+        "type": "github"
       }
     },
     "gitignore": {

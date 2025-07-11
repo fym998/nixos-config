@@ -28,7 +28,7 @@
     nixos-hardware.url = "github:Biaogo/nixos-hardware/master";
 
     fym998-nur = {
-      url = "path:/home/fym/repos/nur-packages";
+      url = "github:fym998/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
