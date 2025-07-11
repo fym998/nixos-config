@@ -73,8 +73,8 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1752214160,
-        "narHash": "sha256-BkjTu6fTslhb/GiCZlb0/OeS09ReW81QLpe9z9ndqhU=",
+        "lastModified": 1752266023,
+        "narHash": "sha256-UioYj3tFMpCB0X2opxl1D9HlooKH1cSxsFA/VCmCpx0=",
         "path": "/home/fym/repos/nur-packages",
         "type": "path"
       },
@@ -111,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752202894,
-        "narHash": "sha256-knafgng4gCjZIUMyAEWjxxdols6n/swkYnbWr+oF+1w=",
+        "lastModified": 1752265577,
+        "narHash": "sha256-YhnBM3oknReSFTAuc2SMwekwjl9nDd5PUhcar4DsefM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fab659b346c0d4252208434c3c4b3983a4b38fec",
+        "rev": "3976e0507edc9a5f332cb2be93fa20e646d22374",
         "type": "github"
       },
       "original": {
@@ -159,15 +159,15 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1752048960,
-        "narHash": "sha256-gATnkOe37eeVwKKYCsL+OnS2gU4MmLuZFzzWCtaKLI8=",
-        "owner": "NixOS",
+        "lastModified": 1751379130,
+        "narHash": "sha256-TObxiGbuX/4FbOnzDRvznfMUjIgS+d71+BetT35EOB8=",
+        "owner": "Biaogo",
         "repo": "nixos-hardware",
-        "rev": "7ced9122cff2163c6a0212b8d1ec8c33a1660806",
+        "rev": "8b1f894089789eb39eacf0d6891d1e17cc3a84ab",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "Biaogo",
         "ref": "master",
         "repo": "nixos-hardware",
         "type": "github"

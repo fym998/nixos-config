@@ -55,10 +55,11 @@
       lenovo-legion
 
       arch-install-scripts
+
+      bitsrun-rs
     ]
     ++ (with inputs; [
       plasma-manager.packages.${system}.default
-      fym998-nur.packages.${system}.bitsrun-rs
       agenix.packages.${system}.default
       # fh.packages.x86_64-linux.default
     ]);

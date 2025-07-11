@@ -25,7 +25,7 @@
     };
     impermanence.url = "https://flakehub.com/f/nix-community/impermanence/*";
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:Biaogo/nixos-hardware/master";
 
     fym998-nur = {
       url = "path:/home/fym/repos/nur-packages";
@@ -60,7 +60,9 @@
           ;
       };
 
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+      };
 
       treefmtEval.${system} = inputs.treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
@@ -68,19 +70,12 @@
       };
     in
     {
-      # inputs = inputs; # for debug
+      inputs = inputs; # for debug
       nixosConfigurations = {
         ${hostname} = nixpkgs.lib.nixosSystem {
           inherit specialArgs system;
 
           modules = [
-            {
-              nixpkgs.overlays = [
-                (_: prev: {
-                  fym998 = inputs.fym998-nur.packages."${prev.system}";
-                })
-              ];
-            }
             ./nixos
             inputs.agenix.nixosModules.default
             #inputs.impermanence.nixosModules.impermanence

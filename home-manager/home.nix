@@ -53,13 +53,14 @@
         umu-launcher
         winetricks
         # wineWow64Packages.stagingFull
+
+        wpsoffice-cn-fcitx
       ]
-      ++ (with pkgs.fym998; [ wpsoffice-cn-fcitx ])
       ++ [
         (writeShellApplication {
           name = "bsl";
 
-          runtimeInputs = [ pkgs.fym998.bitsrun-rs ];
+          runtimeInputs = [ pkgs.bitsrun-rs ];
 
           text = ''
             bitsrun login --config "${config.age.secrets.bitsrun-rs-config.path}"

@@ -1,12 +1,15 @@
+{ inputs, ... }:
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-    cudaSupport = true;
+  nixpkgs = {
+    overlays = [ inputs.fym998-nur.overlays.default ];
+    config = {
+      allowUnfree = true;
+      cudaSupport = true;
+    };
   };
 
   nix.settings = rec {
     cores = 13;
-    allow-flake-config = true;
     allow-import-from-derivation = false;
     allowed-users = [ "@wheel" ];
     trusted-users = allowed-users;
