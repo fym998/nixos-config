@@ -131,14 +131,15 @@
       "locked": {
         "lastModified": 1737831083,
         "narHash": "sha256-LJggUHbpyeDvNagTUrdhe/pRVp4pnS6wVKALS782gRI=",
+        "owner": "nix-community",
+        "repo": "impermanence",
         "rev": "4b3e914cdf97a5b536a889e939fb2fd2b043a170",
-        "revCount": 179,
-        "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/nix-community/impermanence/0.1.179%2Brev-4b3e914cdf97a5b536a889e939fb2fd2b043a170/01949ece-a284-72b6-a27c-78288a3500e2/source.tar.gz"
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://flakehub.com/f/nix-community/impermanence/%2A"
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "type": "github"
       }
     },
     "nix-darwin": {
@@ -148,16 +149,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1749744770,
-        "narHash": "sha256-MEM9XXHgBF/Cyv1RES1t6gqAX7/tvayBC1r/KPyK1ls=",
-        "rev": "536f951efb1ccda9b968e3c9dee39fbeb6d3fdeb",
-        "revCount": 2185,
-        "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/nix-darwin/nix-darwin/0.2505.2185%2Brev-536f951efb1ccda9b968e3c9dee39fbeb6d3fdeb/019764ed-d7c6-70dd-85f6-db61a5b097a1/source.tar.gz"
+        "lastModified": 1751313918,
+        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://flakehub.com/f/nix-darwin/nix-darwin/%2A"
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "type": "github"
       }
     },
     "nixos-hardware": {
