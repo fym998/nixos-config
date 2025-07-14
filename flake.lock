@@ -73,11 +73,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1752482957,
-        "narHash": "sha256-yyv1BBkhkkJy+SSCutJK93+I5PmWWsH7uzKJD2Zzegw=",
+        "lastModified": 1752514730,
+        "narHash": "sha256-fNhUFqoj8uKoXXm2d23KgJGWkeTu1Ov2CLmKTiq/4RI=",
         "owner": "fym998",
         "repo": "nur-packages",
-        "rev": "1d26feaba91dd7bccdb17fe6e36ae44056fa2ee8",
+        "rev": "8951988263994292316c5180a085c127114e9817",
         "type": "github"
       },
       "original": {
