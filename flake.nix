@@ -46,19 +46,7 @@
   outputs =
     inputs@{ self, nixpkgs, ... }:
     let
-      username = "fym";
-      hostname = "legion-nixos";
-      stateVersion = "25.05";
       system = "x86_64-linux";
-      specialArgs = {
-        inherit
-          inputs
-          username
-          hostname
-          stateVersion
-          system
-          ;
-      };
 
       pkgs = import nixpkgs {
         inherit system;
@@ -76,33 +64,48 @@
     in
     {
       inputs = inputs; # for debug
-      nixosConfigurations = {
-        ${hostname} = nixpkgs.lib.nixosSystem {
-          inherit specialArgs system;
+      nixosConfigurations =
+        let
+          username = "fym";
+          hostname = "legion-nixos";
+          stateVersion = "25.05";
+          specialArgs = {
+            inherit
+              inputs
+              username
+              hostname
+              stateVersion
+              system
+              ;
+          };
+        in
+        {
+          ${hostname} = nixpkgs.lib.nixosSystem {
+            inherit specialArgs system;
 
-          modules = [
-            { nixpkgs.pkgs = pkgs; }
-            ./nixos
-            inputs.agenix.nixosModules.default
-            #inputs.impermanence.nixosModules.impermanence
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${username} = ./home-manager;
-                extraSpecialArgs = specialArgs;
-                sharedModules = [
-                  inputs.plasma-manager.homeManagerModules.plasma-manager
-                  inputs.agenix.homeManagerModules.default
-                ];
-                backupFileExtension = "backup";
-              };
-            }
-            inputs.nixos-hardware.nixosModules.lenovo-legion-16iah7h
-          ];
+            modules = [
+              { nixpkgs.pkgs = pkgs; }
+              ./nixos
+              inputs.agenix.nixosModules.default
+              #inputs.impermanence.nixosModules.impermanence
+              inputs.home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.${username} = ./home-manager;
+                  extraSpecialArgs = specialArgs;
+                  sharedModules = [
+                    inputs.plasma-manager.homeManagerModules.plasma-manager
+                    inputs.agenix.homeManagerModules.default
+                  ];
+                  backupFileExtension = "backup";
+                };
+              }
+              inputs.nixos-hardware.nixosModules.lenovo-legion-16iah7h
+            ];
+          };
         };
-      };
 
       formatter.${system} = treefmtEval.${system}.config.build.wrapper;
 
