@@ -50,10 +50,10 @@
 
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ inputs.fym998-nur.overlays.default ];
         config = {
           allowUnfree = true;
           cudaSupport = true;
+          packageOverrides = _pkgs: inputs.fym998-nur.legacyPackages.${system};
         };
       };
 
