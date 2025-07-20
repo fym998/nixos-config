@@ -20,55 +20,52 @@
       in
       env;
 
-    packages =
-      with pkgs;
-      [
-        gh
-        nil
-        nix-tree
-        nixfmt-rfc-style
+    packages = with pkgs; [
+      gh
+      nil
+      nix-tree
+      nixfmt-rfc-style
 
-        go-musicfox
-        ffmpeg
-        kazumi
+      go-musicfox
+      ffmpeg
+      kazumi
 
-        kdePackages.yakuake
-        kdePackages.kdialog
+      kdePackages.yakuake
+      kdePackages.kdialog
 
-        intel-gpu-tools
-        vulkan-tools
-        glxinfo
+      intel-gpu-tools
+      vulkan-tools
+      glxinfo
 
-        alacritty
-        fuzzel
-        waybar
+      alacritty
+      fuzzel
+      waybar
 
-        obsidian
-        zotero
+      obsidian
+      zotero
 
-        nix-init
-        nix-prefetch-git
+      nix-init
+      nix-prefetch-git
 
-        (hmcl.override { glfw = glfw3-minecraft; })
-        umu-launcher
-        winetricks
-        # wineWow64Packages.stagingFull
+      (hmcl.override { glfw = glfw3-minecraft; })
+      umu-launcher
+      winetricks
+      # wineWow64Packages.stagingFull
 
-        wpsoffice-cn-fcitx
-      ]
-      ++ [
-        (writeShellApplication {
-          name = "bsl";
+      wpsoffice-cn-fcitx
 
-          runtimeInputs = [ pkgs.bitsrun-rs ];
+      (writeShellApplication {
+        name = "bsl";
 
-          text = ''
-            bitsrun login --config "${config.age.secrets.bitsrun-rs-config.path}"
-            sleep 1
-            bitsrun status
-          '';
-        })
-      ];
+        runtimeInputs = [ pkgs.bitsrun-rs ];
+
+        text = ''
+          bitsrun login --config "${config.age.secrets.bitsrun-rs-config.path}"
+          sleep 1
+          bitsrun status
+        '';
+      })
+    ];
   };
 
   services.podman.enable = true;
