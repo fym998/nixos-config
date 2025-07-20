@@ -52,7 +52,6 @@
         inherit system;
         config = {
           allowUnfree = true;
-          cudaSupport = true;
           packageOverrides = _pkgs: inputs.fym998-nur.legacyPackages.${system};
         };
       };
