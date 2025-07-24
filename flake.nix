@@ -112,24 +112,22 @@
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
       };
 
-      devShells.${system} = {
-        default =
-          let
-            pre-commit = inputs.pre-commit-hooks.lib.${system}.run {
-              src = ./.;
-              hooks.treefmt = {
-                enable = true;
-                package = treefmtEval.${system}.config.build.wrapper;
-              };
+      devShells.${system}.default =
+        let
+          pre-commit = inputs.pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks.treefmt = {
+              enable = true;
+              package = treefmtEval.${system}.config.build.wrapper;
             };
-          in
-          pkgs.mkShellNoCC {
-            inherit (pre-commit) shellHook;
-            buildInputs = pre-commit.enabledPackages;
-            packages = with pkgs; [
-              nil
-            ];
           };
-      };
+        in
+        pkgs.mkShellNoCC {
+          inherit (pre-commit) shellHook;
+          buildInputs = pre-commit.enabledPackages;
+          packages = with pkgs; [
+            nil
+          ];
+        };
     };
 }
