@@ -109,26 +109,27 @@
       formatter.${system} = treefmtEval.${system}.config.build.wrapper;
 
       checks.${system} = {
-        pre-commit = inputs.pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks.treefmt = {
-            enable = true;
-            packageOverrides.treefmt = treefmtEval.${system}.config.build.wrapper;
-          };
-        };
-        # formatting = treefmtEval.${pkgs.system}.config.build.check self;
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
       };
 
       devShells.${system} = {
-        default = pkgs.mkShellNoCC {
-          inherit (self.checks.${system}.pre-commit) shellHook;
-          buildInputs = self.checks.${system}.pre-commit.enabledPackages;
-          packages = with pkgs; [
-            nil
-            # nixd
-          ];
-        };
+        default =
+          let
+            pre-commit = inputs.pre-commit-hooks.lib.${system}.run {
+              src = ./.;
+              hooks.treefmt = {
+                enable = true;
+                package = treefmtEval.${system}.config.build.wrapper;
+              };
+            };
+          in
+          pkgs.mkShellNoCC {
+            inherit (pre-commit) shellHook;
+            buildInputs = pre-commit.enabledPackages;
+            packages = with pkgs; [
+              nil
+            ];
+          };
       };
     };
-
 }
