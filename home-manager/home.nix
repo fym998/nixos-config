@@ -12,13 +12,9 @@
     inherit username;
     homeDirectory = "/home/${username}";
 
-    sessionVariables =
-      let
-        env = {
-          NIXOS_OZONE_WL = 1;
-        };
-      in
-      env;
+    sessionVariables = {
+      # NIXOS_OZONE_WL = 1;
+    };
 
     packages = with pkgs; [
       gh
