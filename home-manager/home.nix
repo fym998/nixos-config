@@ -49,18 +49,6 @@
       # wineWow64Packages.stagingFull
 
       wpsoffice-cn-fcitx
-
-      (writeShellApplication {
-        name = "bsl";
-
-        runtimeInputs = [ pkgs.bitsrun-rs ];
-
-        text = ''
-          bitsrun login --config "${config.age.secrets.bitsrun-rs-config.path}"
-          sleep 1
-          bitsrun status
-        '';
-      })
     ];
   };
 
