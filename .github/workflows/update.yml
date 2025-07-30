@@ -4,6 +4,8 @@ on:
   workflow_dispatch: # allows manual triggering
   schedule:
     - cron: "0 12 * * 4" # runs every Thursday at 12:00 UTC
+  repository_dispatch:
+    types: [update-flake-lock] # allows triggering via repository dispatch
 
 jobs:
   nix-flake-update:
