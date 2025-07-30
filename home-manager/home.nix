@@ -24,7 +24,6 @@
 
       go-musicfox
       ffmpeg
-      kazumi
 
       kdePackages.yakuake
       kdePackages.kdialog
