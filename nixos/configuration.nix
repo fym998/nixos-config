@@ -14,8 +14,6 @@
 }:
 
 {
-  virtualisation.waydroid.enable = true;
-
   services.sunshine = {
     enable = true;
     capSysAdmin = true;

@@ -9,6 +9,7 @@
     ./nix.nix
     ./networking.nix
     ./secrets.nix
+    ./virtualisation.nix
     ./users.nix
   ];
 }
