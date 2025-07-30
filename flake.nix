@@ -52,7 +52,7 @@
         inherit system;
         config = {
           allowUnfree = true;
-          packageOverrides = _pkgs: inputs.fym998-nur.legacyPackages.${system};
+          packageOverrides = pkgs: inputs.fym998-nur.overlays.default pkgs pkgs;
         };
       };
 
