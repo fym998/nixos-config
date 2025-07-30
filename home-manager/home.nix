@@ -43,9 +43,22 @@
       nix-prefetch-git
 
       (hmcl.override { glfw = glfw3-minecraft; })
-      umu-launcher
-      winetricks
+
       # wineWow64Packages.stagingFull
+
+      (pkgs.writeShellApplication {
+        name = "umu-run";
+
+        runtimeInputs = [ pkgs.umu-launcher ];
+
+        runtimeEnv = {
+          PROTONPATH = "${pkgs.proton-ge-bin.steamcompattool}";
+        };
+
+        text = ''
+          umu-run "$@"
+        '';
+      })
 
       wpsoffice-cn-fcitx
     ];
