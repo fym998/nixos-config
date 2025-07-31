@@ -3,7 +3,7 @@ name: "Update Nix flake lock"
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: "0 12 * * 4" # runs every Thursday at 12:00 UTC
+    - cron: "0 3 * * 4" # runs every Thursday at 3:00 UTC
   repository_dispatch:
     types: [update-flake-lock] # allows triggering via repository dispatch
 
