@@ -12,6 +12,7 @@
 
   users.users.${username}.extraGroups = [
     "podman"
+    "kvm"
   ];
 
   hardware.nvidia-container-toolkit.enable = true;
