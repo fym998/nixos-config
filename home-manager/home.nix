@@ -46,19 +46,7 @@
 
       # wineWow64Packages.stagingFull
 
-      (pkgs.writeShellApplication {
-        name = "umu-run";
-
-        runtimeInputs = [ pkgs.umu-launcher ];
-
-        runtimeEnv = {
-          PROTONPATH = "${pkgs.proton-ge-bin.steamcompattool}";
-        };
-
-        text = ''
-          umu-run "$@"
-        '';
-      })
+      umu-launcher-wrapper
 
       wpsoffice-cn-fcitx
     ];
