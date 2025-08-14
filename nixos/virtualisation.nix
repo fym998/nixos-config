@@ -1,8 +1,6 @@
 { username, ... }:
 {
   virtualisation = {
-    waydroid.enable = true;
-
     podman = {
       enable = true;
       dockerCompat = true;
