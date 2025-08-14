@@ -52,9 +52,11 @@
         inherit system;
         config = {
           allowUnfree = true;
-          packageOverrides = pkgs: inputs.fym998-nur.overlays.default pkgs pkgs;
+          packageOverrides = pkgs: (inputs.fym998-nur.overlays.default pkgs pkgs) // self.packages.${system};
         };
       };
+
+      inherit (nixpkgs) lib;
 
       treefmtEval.${system} = inputs.treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
@@ -79,7 +81,7 @@
           };
         in
         {
-          ${hostname} = nixpkgs.lib.nixosSystem {
+          ${hostname} = lib.nixosSystem {
             inherit specialArgs system;
 
             modules = [
@@ -105,6 +107,11 @@
             ];
           };
         };
+
+      packages.${system} = lib.packagesFromDirectoryRecursive {
+        inherit (pkgs) callPackage;
+        directory = ./packages;
+      };
 
       formatter.${system} = treefmtEval.${system}.config.build.wrapper;
 

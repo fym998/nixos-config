@@ -49,6 +49,8 @@
       umu-launcher-wrapper
 
       wpsoffice-cn-fcitx
+
+      maa-wrapper
     ];
   };
 
