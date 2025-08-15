@@ -12,6 +12,15 @@ echo config_file="$config_file"
 maa_cmd="env GAMEID=maa umu-run $maa_bin"
 echo maa_cmd="$maa_cmd"
 
+# 创建adb符号链接
+ln -sf "$(which adb)" -t "$maa_root" -v
+
+# 检查ln命令是否成功
+if [ $? -ne 0 ]; then
+    kdialog --title "错误" --error "创建adb符号链接失败"
+    exit 1
+fi
+
 # 从配置文件中提取当前地址
 current_address=""
 if [ -f "$config_file" ]; then
@@ -43,16 +52,6 @@ if [ $? -eq 0 ] && [ -n "$new_address" ]; then
 fi
 
 # 无论是否输入地址，都执行以下命令
-# kdialog --title "信息" --passivepopup "正在设置MAA环境..." 3
-
-# 创建adb符号链接
-ln -sf "$(which adb)" -t "$maa_root" -v
-
-# 检查ln命令是否成功
-if [ $? -ne 0 ]; then
-    kdialog --title "错误" --error "创建adb符号链接失败"
-    exit 1
-fi
 
 # 设置安卓设备分辨率
 adb shell wm size 1080x1920
