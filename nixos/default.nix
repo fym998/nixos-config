@@ -8,6 +8,7 @@
     #./impermanence.nix
     ./nix.nix
     ./networking.nix
+    ./ollama.nix
     ./secrets.nix
     ./virtualisation.nix
     ./users.nix
