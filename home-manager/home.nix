@@ -13,7 +13,7 @@
     homeDirectory = "/home/${username}";
 
     sessionVariables = {
-      # NIXOS_OZONE_WL = 1;
+      NIXOS_OZONE_WL = 1;
     };
 
     packages = with pkgs; [
