@@ -39,6 +39,21 @@
           "org.kde.plasma.showdesktop"
         ];
       }
+      # System monitor panel on right
+      {
+        height = 80;
+        hiding = "dodgewindows";
+        lengthMode = "fit";
+        location = "right";
+        widgets = [
+          "org.kde.plasma.systemmonitor.cpu"
+          "org.kde.plasma.systemmonitor.cpucore"
+          "org.kde.plasma.systemmonitor.diskactivity"
+          "org.kde.plasma.systemmonitor.diskusage"
+          "org.kde.plasma.systemmonitor.memory"
+          "org.kde.plasma.systemmonitor.net"
+        ];
+      }
     ];
 
     shortcuts."yakuake"."toggle-window-state" = "F8";
