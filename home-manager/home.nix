@@ -36,7 +36,7 @@
       fuzzel
       waybar
 
-      obsidian
+      # obsidian
       zotero
 
       nix-init
