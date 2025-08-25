@@ -22,6 +22,8 @@
       nix-tree
       nixfmt-rfc-style
 
+      python3
+
       go-musicfox
       ffmpeg
 
