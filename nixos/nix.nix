@@ -1,10 +1,10 @@
 {
   nix = {
     channel.enable = false;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    # };
     settings = rec {
       cores = 13;
       allow-import-from-derivation = false;
