@@ -1,13 +1,13 @@
 {
   services = {
     ollama = {
-      enable = true;
+      enable = false;
       acceleration = "cuda";
       environmentVariables = {
         OLLAMA_ORIGINS = "*";
       };
     };
 
-    nextjs-ollama-llm-ui.enable = true;
+    nextjs-ollama-llm-ui.enable = false;
   };
 }
