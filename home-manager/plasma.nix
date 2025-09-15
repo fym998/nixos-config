@@ -48,9 +48,9 @@
         widgets = [
           "org.kde.plasma.systemmonitor.cpu"
           "org.kde.plasma.systemmonitor.cpucore"
+          "org.kde.plasma.systemmonitor.memory"
           "org.kde.plasma.systemmonitor.diskactivity"
           "org.kde.plasma.systemmonitor.diskusage"
-          "org.kde.plasma.systemmonitor.memory"
           "org.kde.plasma.systemmonitor.net"
         ];
       }
@@ -97,9 +97,9 @@
       "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
 
       "spectaclerc" = {
-        "Annotations"."annotationToolType" = 2;
-        "Annotations"."freehandShadow" = false;
-        "Annotations"."freehandStrokeColor" = "255,255,255";
+        # "Annotations"."annotationToolType" = 2;
+        # "Annotations"."freehandShadow" = false;
+        # "Annotations"."freehandStrokeColor" = "255,255,255";
         "General"."clipboardGroup" = "PostScreenshotCopyImage";
         "General"."printKeyRunningAction" = "StartNewInstance";
         "GuiConfig"."captureMode" = 4;
