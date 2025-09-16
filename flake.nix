@@ -97,7 +97,7 @@
                   users.${username} = ./home-manager;
                   extraSpecialArgs = specialArgs;
                   sharedModules = [
-                    inputs.plasma-manager.homeManagerModules.plasma-manager
+                    inputs.plasma-manager.homeModules.plasma-manager
                     inputs.agenix.homeManagerModules.default
                   ];
                   backupFileExtension = "backup";
