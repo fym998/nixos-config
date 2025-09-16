@@ -40,7 +40,7 @@
       waybar
 
       # obsidian
-      zotero
+      # zotero
 
       nix-init
       nix-prefetch-git
