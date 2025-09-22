@@ -50,6 +50,7 @@
       htop
       btop
 
+      parted
       gparted
       btrfs-assistant
       compsize
