@@ -42,6 +42,7 @@
 
       # obsidian
       # zotero
+      matlab
 
       nix-init
       nix-prefetch-git

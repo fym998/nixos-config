@@ -41,6 +41,12 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-matlab = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "gitlab:doronbehar/nix-matlab";
+    };
+
   };
 
   outputs =
@@ -52,7 +58,11 @@
         inherit system;
         config = {
           allowUnfree = true;
-          packageOverrides = pkgs: (inputs.fym998-nur.overlays.default pkgs pkgs) // self.packages.${system};
+          packageOverrides =
+            pkgs:
+            (inputs.fym998-nur.overlays.default pkgs pkgs)
+            // (inputs.nix-matlab.overlay pkgs pkgs)
+            // self.packages.${system};
         };
       };
 
