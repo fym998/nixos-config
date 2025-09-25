@@ -27,7 +27,6 @@
       go-musicfox
       ffmpeg
       vlc
-      piliplus
 
       kdePackages.yakuake
       kdePackages.kdialog
