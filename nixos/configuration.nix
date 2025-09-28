@@ -14,6 +14,8 @@
 }:
 
 {
+  services.printing.cups-pdf.enable = true;
+
   programs.dconf.enable = true;
 
   services.sunshine = {
