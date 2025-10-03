@@ -44,6 +44,8 @@
       which
       tree
       colordiff
+      unzip
+      unrar
 
       lesspass-cli
 
