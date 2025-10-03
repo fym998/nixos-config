@@ -63,6 +63,8 @@
 
       arch-install-scripts
 
+      android-tools
+
       bitsrun-rs
 
       (writeShellApplication {
