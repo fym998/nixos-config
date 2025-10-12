@@ -54,7 +54,7 @@ fi
 # 无论是否输入地址，都执行以下命令
 
 # 设置安卓设备分辨率
-adb shell wm size 1080x1920
+adb -s "$new_address" shell wm size 1080x1920
 if [ $? -ne 0 ]; then
     kdialog --title "警告" --warningyesno "设置分辨率失败，是否继续运行MAA？"
     if [ $? -ne 0 ]; then
@@ -71,7 +71,9 @@ if [ $? -ne 0 ]; then
 fi
 
 # 无论MAA运行结果如何，都重置分辨率
-adb shell wm size reset
+adb -s "$new_address" shell wm size reset
 if [ $? -ne 0 ]; then
     kdialog --title "警告" --sorry "重置分辨率失败"
 fi
+
+adb disconnect "$new_address"
