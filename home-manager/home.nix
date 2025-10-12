@@ -27,6 +27,7 @@
       go-musicfox
       ffmpeg
       vlc
+      obs-studio
 
       kdePackages.yakuake
       kdePackages.kdialog
