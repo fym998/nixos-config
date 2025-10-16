@@ -6,11 +6,11 @@
     ./fonts.nix
     ./fprint-fpcmoh.nix
     ./hardware-configuration.nix
-    #./impermanence.nix
     ./nix.nix
     ./networking.nix
     ./ollama.nix
     ./secrets.nix
+    ./swap.nix
     ./virtualisation.nix
     ./users.nix
   ];
