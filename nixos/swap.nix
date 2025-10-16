@@ -1,6 +1,7 @@
 {
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 1;
+  boot.kernel = {
+    sysctl."vm.swappiness" = 1;
+    sysfs.module.zswap.parameters.enabled = 1;
   };
 
   swapDevices = [
