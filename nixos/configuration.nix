@@ -136,7 +136,7 @@
     enable = true;
     clean = {
       enable = true;
-      extraArgs = "--keep-since 1w --keep 10";
+      extraArgs = "--keep-since 1w --keep 10 --no-gcroots";
       dates = "weekly";
     };
     flake = "/home/${username}/repos/nixos-config";
