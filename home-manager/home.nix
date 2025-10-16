@@ -131,6 +131,11 @@
 
   programs.fish = {
     enable = true;
+    functions = {
+      whichabs = {
+        body = "command realpath (which $argv)";
+      };
+    };
   };
 
   # This value determines the Home Manager release that your
