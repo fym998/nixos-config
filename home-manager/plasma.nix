@@ -161,7 +161,10 @@
   programs.kate = {
     enable = true;
     editor = {
-      indent.width = 2;
+      indent = {
+        width = 2;
+        replaceWithSpaces = true;
+      };
       # font = {
       #   family = "Hack";
       #   pointSize = 11;
