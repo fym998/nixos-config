@@ -66,8 +66,6 @@
     ];
   };
 
-  services.easyeffects.enable = true;
-
   fonts.fontconfig.enable = true;
   xdg.configFile."fontconfig/fonts.conf".source = ./files/.config/fontconfig/fonts.conf;
 
