@@ -126,8 +126,6 @@
     settings.PasswordAuthentication = false;
   };
 
-  services.tailscale.enable = true;
-
   i18n.extraLocales = [ "zh_CN.UTF-8/UTF-8" ];
 
   programs.nh = {
