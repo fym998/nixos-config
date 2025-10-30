@@ -62,6 +62,18 @@
       wpsoffice-cn-fcitx
 
       maa-wrapper
+
+      (writeShellApplication {
+        name = "bsl";
+
+        runtimeInputs = [ pkgs.bitsrun-rs ];
+
+        text = ''
+          bitsrun login --config "${config.age.secrets.bitsrun-rs-config.path}"
+          sleep 1
+          bitsrun status
+        '';
+      })
     ];
   };
 
