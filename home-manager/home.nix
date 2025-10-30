@@ -34,7 +34,6 @@
 
       intel-gpu-tools
       vulkan-tools
-      glxinfo
 
       alacritty
       fuzzel
