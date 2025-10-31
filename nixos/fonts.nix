@@ -27,7 +27,7 @@
     enable = true;
     defaultFonts = {
       monospace = [
-        "Hack"
+        "Hack Nerd Font"
         "Source Han Sans SC"
       ];
       sansSerif = [ "Source Han Sans SC" ];
