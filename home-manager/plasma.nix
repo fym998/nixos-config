@@ -152,7 +152,7 @@
         UnderlineFilesEnabled = true;
       };
       font = {
-        name = "Hack";
+        name = builtins.head osConfig.fonts.fontconfig.defaultFonts.monospace;
         size = 11;
       };
     };
