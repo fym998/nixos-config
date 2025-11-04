@@ -26,7 +26,7 @@ if [ -f "$config_file" ]; then
 fi
 
 # 使用kdialog获取用户输入的地址，默认值为配置文件中的当前地址
-new_address=$(kdialog --title "输入ADB地址" --inputbox "请输入ADB地址 (host:port格式，可选):" "$current_address")
+new_address=$(kdialog --title "MAA" --inputbox "请输入ADB地址 (host:port格式，可选):" "$current_address")
 
 # 检查用户是否输入了地址（点击OK且输入不为空）
 if [ $? -eq 0 ] && [ -n "$new_address" ]; then
