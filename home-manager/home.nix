@@ -46,14 +46,7 @@
       nix-init
       nix-prefetch-git
 
-      (hmcl.override {
-        glfw = glfw3-minecraft;
-        minecraftJdks = [
-          jre8
-          jdk17
-          jdk21
-        ];
-      })
+      (hmcl.override { glfw = glfw3-minecraft; })
 
       # wineWow64Packages.stagingFull
 
