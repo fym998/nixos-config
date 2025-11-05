@@ -89,11 +89,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1762101899,
-        "narHash": "sha256-cbCdosChyy4T0djz5PzGyrS2JKiRLq8KldS1pVTktd8=",
+        "lastModified": 1762312334,
+        "narHash": "sha256-jxeiJY3gb3eaFD1YyOIxV8e5UD0Ophwa+XENns9WhtI=",
         "owner": "fym998",
         "repo": "nur-packages",
-        "rev": "401a922a2e273633ae2a38299bf1b7458b1b48e3",
+        "rev": "309778fd918e32e6fc6113e7e64a8d8152ebedf0",
         "type": "github"
       },
       "original": {
