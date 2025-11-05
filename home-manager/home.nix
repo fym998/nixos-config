@@ -53,6 +53,7 @@
       umu-launcher-wrapper
 
       wpsoffice-cn-fcitx
+      wechat
 
       maa-wrapper
 
