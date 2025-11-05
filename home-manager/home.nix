@@ -46,7 +46,7 @@
       nix-init
       nix-prefetch-git
 
-      (hmcl.override { glfw = glfw3-minecraft; })
+      hmcl
 
       # wineWow64Packages.stagingFull
 
