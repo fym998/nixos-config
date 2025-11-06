@@ -32,6 +32,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wrapper-manager.url = "github:viperML/wrapper-manager";
+
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";

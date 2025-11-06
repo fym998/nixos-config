@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   username,
   stateVersion,
   ...
@@ -53,7 +54,13 @@
       umu-launcher-wrapper
 
       wpsoffice-cn-fcitx
-      wechat
+      (inputs.wrapper-manager.lib.wrapWith pkgs {
+        basePackage = pkgs.wechat;
+        env = {
+          QT_IM_MODULE.value = "fcitx";
+          GTK_IM_MODULE.value = "fcitx";
+        };
+      })
 
       maa-wrapper
 
