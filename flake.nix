@@ -110,7 +110,7 @@
                     inputs.plasma-manager.homeModules.plasma-manager
                     inputs.agenix.homeManagerModules.default
                   ];
-                  backupFileExtension = "backup";
+                  backupFileExtension = "homemanagerbackup";
                 };
               }
               inputs.nixos-hardware.nixosModules.lenovo-legion-16iah7h
